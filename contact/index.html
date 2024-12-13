@@ -125,7 +125,7 @@
                     body: formData
                 });
 
-                if (response.ok) {
+                if (response.status == "OK") {
                     document.getElementById('thankYouMessage').style.display = 'block';
                     form.style.display = 'none';
                 } else {
