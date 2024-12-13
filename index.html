@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Montauk Island</title>
+    <style>
+        @font-face {
+            font-family: 'Ppeiko';
+            src: url('m/ppeiko-medium.otf') format('opentype');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #102224;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .text-content h1 {
+            font-family: 'Ppeiko', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .text-content p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .text-content .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #102224;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+		.split a {
+		  display: block !important;
+		  float: left;
+		  margin-top: 10px !important;
+		}
+
+		.split div {
+		  float: right;
+		  margin-right: 10%;
+		}
+
+		.split {
+		  display: block;
+		  overflow: hidden;
+		  margin-top: 48px;
+		}
+
+
+        .text-content .logo img {
+            width: 120px;
+        }
+
+        .image {
+            flex: 1;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+		@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .image {
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-content">
+            <h1>North Montauk Island</h1>
+            <p>A Unique Intersection: Luxury in The Hamptons, united with Fishers Island, the only island in both jurisdictions.</p>
+			<div class="split">
+				<a href="#" class="button">Get in Touch</a>
+				<div class="logo">
+					<img src="m/1.svg" alt="Smithsonian Logo">
+				</div>
+			</div>
+        </div>
+        <div class="image">
+            <img src="m/1.png" alt="North Montauk Island">
+        </div>
+    </div>
+</body>
+</html>
