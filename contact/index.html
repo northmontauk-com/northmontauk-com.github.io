@@ -106,38 +106,47 @@
     </div>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-            const form = e.target;
-            const formData = new FormData(form);
-            const honeypot = formData.get('address');
+        const form = e.target;
+        const formData = new FormData(form);
+        const honeypot = formData.get('address');
 
-            // Honeypot check
-            if (honeypot) {
-                console.log('Bot detected');
-                return;
-            }
+        // Honeypot check
+        if (honeypot) {
+            console.log('Bot detected');
+            return;
+        }
 
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData
-                });
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData
+            });
 
-                if (response.status == "OK") {
+            if (response.ok) { // Check if HTTP status is 200-299
+                const jsonResponse = await response.json(); // Parse JSON response
+
+                if (jsonResponse.status === "OK") {
                     document.getElementById('thankYouMessage').style.display = 'block';
                     form.style.display = 'none';
                 } else {
                     document.getElementById('Error').style.display = 'block';
                     form.style.display = 'none';
                 }
-            } catch (error) {
-                console.error('Error:', error);
+            } else {
+                console.error('HTTP error:', response.status);
                 document.getElementById('Error').style.display = 'block';
                 form.style.display = 'none';
             }
-        });
-    </script>
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('Error').style.display = 'block';
+            form.style.display = 'none';
+        }
+    });
+</script>
+
 </body>
 </html>
