@@ -91,6 +91,7 @@
 		@media (max-width: 768px) {
     .container {
         flex-direction: column-reverse;
+		align-self: baseline;
     }
 	.text-content h1 {
 		font-size:2.5rem;
@@ -98,9 +99,15 @@
 
     .image {
 		margin-bottom: 10px;
-		width: 66.7%;
 		display: block;
-		margin: 10px auto;
+		margin: 0;
+		width:100%;
+	}
+	.image img {
+		object-fit: fill;
+		width: 100%;
+		height: 200px;
+		object-fit:cover;
 	}
 }
 
